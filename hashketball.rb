@@ -73,7 +73,7 @@ def player_numbers (teamName)
     teamInfo.collect do |attribute, data|
       if data == teamName
         data.collect do |playerName, playerData|
-          playerData[:nubers]
+          playerData[:number]
         end
       end
     end
