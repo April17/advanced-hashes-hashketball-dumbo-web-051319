@@ -24,16 +24,19 @@ def game_hash
     }
   }
 end
-def shoe_size (name)
-  game_hash.each do |team, data|
-    data.each do |teamInfo, playerInfo|
-      if teamInfo == "players"
-        playerInfo.each do |playerName, info|
-          if playerName == name
-            return info[shoe]
+def num_points_scored (name)
+  game_hash.collect do |team, teamInfo|
+    teamInfo.collect do |attribute, data|
+      if attribute == :players
+        data.collect do |playerName, playerData|
+          if playerName.to_s == name
+            playerData[points]
           end
         end
       end
     end
   end
+end
+def shoe_size (name)
+
 end
