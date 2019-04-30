@@ -30,7 +30,7 @@ def num_points_scored (name)
       if attribute == :players
         data.collect do |playerName, playerData|
           if playerName.to_s == name
-            playerData[:points]
+            return playerData[:points]
           end
         end
       end
