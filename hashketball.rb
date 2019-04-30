@@ -59,3 +59,12 @@ def team_colors (teamName)
     end
   end
 end
+def team_names
+  game_hash.collect do |teams, teamInfo|
+    teamInfo.collect do |attribute, data|
+      if attribute == :team_name
+        teamInfo[:team_name]
+      end
+    end
+  end.flatten.compact
+end
