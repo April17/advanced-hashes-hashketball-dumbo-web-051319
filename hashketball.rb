@@ -54,7 +54,7 @@ def team_colors (teamName)
   game_hash.collect do |teams, teamInfo|
     teamInfo.collect do |attribute, data|
       if data == teamName
-        return :colors.to_a
+        return teamInfo[:colors]
       end
     end
   end
