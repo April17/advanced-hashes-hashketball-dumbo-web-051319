@@ -68,3 +68,14 @@ def team_names
     end
   end.flatten.compact
 end
+def player_numbers (teamName)
+  game_hash.collect do |teams, teamInfo|
+    teamInfo.collect do |attribute, data|
+      if data == teamName
+        data.collect do |playerName, playerData|
+          playerData[:nubers]
+        end
+      end
+    end
+  end.flatten.compact
+end
