@@ -51,7 +51,7 @@ def shoe_size (name)
   end
 end
 def team_colors (teamName)
-  game_hash.collect_value do |teamInfo|
+  game_hash.collect do |teams, teamInfo|
     teamInfo.collect do |attribute, data|
       if attribute.to_s == teamName
         return teamInfo[:colors]
