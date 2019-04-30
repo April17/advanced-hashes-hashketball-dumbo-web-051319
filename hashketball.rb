@@ -38,5 +38,15 @@ def num_points_scored (name)
   end
 end
 def shoe_size (name)
-
+  game_hash.collect do |team, teamInfo|
+    teamInfo.collect do |attribute, data|
+      if attribute == :players
+        data.collect do |playerName, playerData|
+          if playerName.to_s == name
+            return playerData[:shoe]
+          end
+        end
+      end
+    end
+  end
 end
