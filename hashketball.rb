@@ -75,6 +75,7 @@ def player_numbers (teamName)
         binding.pry
         data.collect do |playerName, playerData|
           playerData[:number]
+          binding.pry
         end
       end
     end
