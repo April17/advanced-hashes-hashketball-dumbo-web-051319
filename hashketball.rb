@@ -112,9 +112,7 @@ def big_shoe_rebounds
       end
     end
   end
-
   bigOne = shoeHolder.sort[-1]
-  binding.pry
   game_hash.collect do |team, teamInfo|
     teamInfo.collect do |attribute, data|
       if attribute == :players
