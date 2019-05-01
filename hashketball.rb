@@ -70,7 +70,7 @@ def team_names
 end
 def player_numbers (teamName)
   selector = ""
-  if teamName == "Brooklyn Net"
+  if teamName == "Brooklyn Nets"
     selector = "home"
   elsif teamName == "Charlotte Hornets"
     selector = "away"
