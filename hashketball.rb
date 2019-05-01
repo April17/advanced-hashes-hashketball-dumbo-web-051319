@@ -72,6 +72,7 @@ def player_numbers (teamName)
   game_hash.collect do |teams, teamInfo|
     teamInfo.collect do |attribute, data|
       data.collect do |playerName, playerData|
+        binding.pry
         playerData[:number]
       end
     end
