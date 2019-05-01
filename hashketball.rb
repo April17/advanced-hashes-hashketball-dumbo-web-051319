@@ -69,11 +69,19 @@ def team_names
   end.flatten.compact
 end
 def player_numbers (teamName)
+  selector = ""
+  if teamName == "Brooklyn Net"
+    selector = "home"
+  elsif teamName == "Charlotte Hornets"
+    selector = "away"
+  end
   game_hash.collect do |teams, teamInfo|
-    teamInfo.collect do |attribute, data|
-        if attribute == :players
-          data.collect do |playerName, playerData|
-            playerData[:number]
+    if teams.to_s == selector
+      teamInfo.collect do |attribute, data|
+          if attribute == :players
+            data.collect do |playerName, playerData|
+              playerData[:number]
+            end
           end
         end
       end
