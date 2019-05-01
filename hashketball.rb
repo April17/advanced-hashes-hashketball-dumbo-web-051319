@@ -87,3 +87,16 @@ def player_numbers (teamName)
       end
   end.flatten.compact.sort
 end
+def player_stats (name)
+  game_hash.collect do |team, teamInfo|
+    teamInfo.collect do |attribute, data|
+      if attribute == :players
+        data.collect do |playerName, playerData|
+          if playerName.to_s == name
+            return playerData
+          end
+        end
+      end
+    end
+  end
+end
