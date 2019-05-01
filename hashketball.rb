@@ -120,6 +120,7 @@ def big_shoe_rebounds
       if attribute == :players
         data.collect do |playerName, playerData|
           if playerData[:shoe] == bigOne
+            binding.pry
             return playerData[:rebounds]
           end
         end
