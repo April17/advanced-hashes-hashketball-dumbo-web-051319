@@ -71,7 +71,7 @@ end
 def player_numbers (teamName)
   game_hash.collect do |teams, teamInfo|
     teamInfo.collect do |attribute, data|
-      if data == teamName
+      if data == teamName || attribute == :players
         binding.pry
         data.collect do |playerName, playerData|
           playerData[:number]
