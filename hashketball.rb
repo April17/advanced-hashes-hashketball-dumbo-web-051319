@@ -69,8 +69,8 @@ def team_names
   end.flatten.compact
 end
 def player_numbers (teamName)
-  game_hash.each do |teams, teamInfo|
-    teamInfo.each do |attribute, data|
+  game_hash.collect do |teams, teamInfo|
+    teamInfo.collect do |attribute, data|
       data.collect do |playerName, playerData|
         playerData[:number]
       end
