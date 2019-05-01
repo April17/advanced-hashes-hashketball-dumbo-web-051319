@@ -71,10 +71,6 @@ end
 def player_numbers (teamName)
   game_hash.each do |teams, teamInfo|
     teamInfo.each do |attribute, data|
-      if data == teamName
-        binding.pry
-        if attribute == :players
-          binding.pry
           data.collect do |playerName, playerData|
             playerData[:number]
           end
