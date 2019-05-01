@@ -75,7 +75,9 @@ def player_numbers (teamName)
   elsif teamName == "Charlotte Hornets"
     selector = "away"
   end
+  binding.pry
   game_hash.collect do |teams, teamInfo|
+    binding.pry
     if teams.to_s == selector
       teamInfo.collect do |attribute, data|
           if attribute == :players
