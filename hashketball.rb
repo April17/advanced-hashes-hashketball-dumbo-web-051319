@@ -71,12 +71,13 @@ end
 def player_numbers (teamName)
   game_hash.collect do |teams, teamInfo|
     if teamInfo[:team_name] == teanName
-    teamInfo.collect do |attribute, data|
-      if attribute == :players
-      data.collect do |playerName, playerData|
-        playerData[:number]
+      teamInfo.collect do |attribute, data|
+        if attribute == :players
+          data.collect do |playerName, playerData|
+              playerData[:number]
+          end
+        end
       end
-    end
     end
   end.flatten.compact.sort
 end
