@@ -76,5 +76,6 @@ def player_numbers (teamName)
         playerData[:number]
       end
     end
+    end
   end.flatten.compact.sort
 end
