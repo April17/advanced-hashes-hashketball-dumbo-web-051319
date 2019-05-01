@@ -108,7 +108,6 @@ def big_shoe_rebounds
       if attribute == :players
         data.collect do |playerName, playerData|
             shoeHolder << playerData[:shoe]
-          end
         end
       end
     end
