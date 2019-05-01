@@ -107,7 +107,6 @@ def big_shoe_rebounds
     teamInfo.collect do |attribute, data|
       if attribute == :players
         data.collect do |playerName, playerData|
-          if playerName.to_s == name
             shoeHolder << playerData[:shoe]
           end
         end
