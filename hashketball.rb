@@ -100,3 +100,31 @@ def player_stats (name)
     end
   end
 end
+def big_shoe_rebounds
+  shoeHolder = []
+  bigOne = 0
+  game_hash.collect do |team, teamInfo|
+    teamInfo.collect do |attribute, data|
+      if attribute == :players
+        data.collect do |playerName, playerData|
+          if playerName.to_s == name
+            shoeHolder << playerData[:shoe]
+          end
+        end
+      end
+    end
+  end
+  shoeHolder.sort
+  bigOne = shoeHolder[-1]
+  game_hash.collect do |team, teamInfo|
+    teamInfo.collect do |attribute, data|
+      if attribute == :players
+        data.collect do |playerName, playerData|
+          if playerData[:shoe] == bigOne
+            return playerData[:rebounds]
+          end
+        end
+      end
+    end
+  end
+end
