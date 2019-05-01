@@ -85,6 +85,5 @@ def player_numbers (teamName)
           end
         end
       end
-    end
   end.flatten.compact.sort
 end
